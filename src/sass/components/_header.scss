@@ -1,0 +1,67 @@
+@use '../settings/typography';
+@use '../settings/sizes';
+@use '../tools/shadows';
+
+.nsf-header {
+  @include shadows.level(3);
+  background-color: var(--nsf-theme-color-level7);
+  color: var(--nsf-theme-text-color);
+  font-size: typography.$size-m;
+  padding: 0;
+
+  .nsf-link {
+    color: var(--nsf-theme-text-color);
+    display: inline-block;
+    padding: sizes.$size-s;
+    text-decoration: none;
+    vertical-align: middle;
+
+    &:hover {
+      background-color: var(--nsf-theme-color-level5);
+    }
+  }
+
+  .nsf-first-link {
+    margin-right: sizes.$size-xxl;
+  }
+
+  .nsf-image-link {
+    padding: 0 sizes.$size-s;
+  }
+}
+
+.nsf-header-links {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+
+  li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.nsf-header-form {
+  background-color: transparent;
+  display: inline-block;
+  vertical-align: middle;
+
+  .nsf-input,
+  .nsf-icon {
+    background-color: var(--nsf-theme-color-level6);
+    border: 0;
+    color: var(--nsf-theme-text-color);
+  }
+
+  .nsf-input:focus {
+    background-color: var(--nsf-theme-color-level4);
+  }
+
+  .nsf-input::placeholder {
+    color: var(--nsf-theme-text-color);
+    opacity: 0.7;
+  }
+}

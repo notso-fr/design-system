@@ -1,0 +1,48 @@
+@use '../settings/colors';
+@use '../settings/typography';
+
+.nsf-menu {
+  background-color: var(--nsf-gray-level2);
+  font-size: typography.$size-xs;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  .nsf-menu-category,
+  .nsf-menu-item,
+  .nsf-link {
+    display: block;
+    margin: 0;
+    padding: 1em;
+  }
+
+  .nsf-menu-category,
+  .nsf-link {
+    padding: 1em;
+  }
+
+  .nsf-menu-category {
+    color: colors.$gray;
+    font-size: typography.$size-xxs;
+    text-transform: uppercase;
+  }
+
+  .nsf-menu-item {
+    padding: 0;
+    vertical-align: middle;
+
+    .nsf-link {
+      text-decoration: none;
+    }
+
+    .nsf-icon {
+      font-size: 1.2em;
+      margin-right: 1em;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      background: var(--nsf-theme-color-level5);
+    }
+  }
+}

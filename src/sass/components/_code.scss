@@ -1,0 +1,21 @@
+@use '../settings/colors';
+@use '../settings/sizes';
+@use '../settings/border';
+@use '../settings/typography';
+
+/**
+ * Code
+ */
+$code-border-color: colors.$gray !default;
+$code-background-color: colors.$light-gray !default;
+
+
+.nsf {
+  &-code {
+    background-color: $code-background-color;
+    border: 1px solid $code-border-color;
+    border-radius: border.$border-radius-m;
+    font-size: typography.$size-xs;
+    padding: sizes.$size-s;
+  }
+}

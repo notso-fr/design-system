@@ -1,0 +1,9 @@
+@use '../settings/colors';
+@use './colors' as tools-colors;
+
+/**
+ * Shadows
+ */
+@mixin level($level) {
+  filter: drop-shadow(0 0 #{2 + $level / 2}px tools-colors.tint(colors.$black, 50 / $level));
+}

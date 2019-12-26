@@ -1,0 +1,36 @@
+@for $i from 1 through 12 {
+  .nsf-#{$i}cols {
+    column-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(#{$i}, 1fr);
+    row-gap: 20px;
+  }
+
+  .nsf-span#{$i} {
+    grid-column: span #{$i};
+  }
+}
+
+.nsf-align-top {
+  align-self: start;
+}
+
+.nsf-align-center {
+  align-self: center;
+}
+
+.nsf-align-bottom {
+  align-self: end;
+}
+
+.nsf-justify-start {
+  justify-self: start;
+}
+
+.nsf-justify-center {
+  justify-self: center;
+}
+
+.nsf-justify-end {
+  justify-self: end;
+}

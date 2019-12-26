@@ -1,0 +1,7 @@
+@use '../tools/shadows';
+
+@for $i from 1 through 5 {
+  .nsf-shadow#{$i} {
+    @include shadows.level($i);
+  }
+}

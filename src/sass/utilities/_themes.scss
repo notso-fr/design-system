@@ -1,0 +1,40 @@
+@use '../settings/colors';
+@use '../tools/colors' as tc;
+
+@mixin define-colors($prefix, $mainColor) {
+  @for $i from 8 through 10 {
+    --nsf-#{$prefix}-level#{$i}: #{tc.shade($mainColor, 30 / (11 - $i))};
+  }
+
+  --nsf-#{$prefix}-level7: #{$mainColor};
+
+  @for $i from 1 through 6 {
+    --nsf-#{$prefix}-level#{$i}: #{tc.tint($mainColor, 100 / $i)};
+  }
+}
+
+:root {
+  --nsf-text-color: #{colors.$black};
+  @include define-colors('gray', colors.$gray);
+}
+
+.nsf-theme-red {
+  --nsf-theme-color: #{colors.$red};
+  --nsf-theme-text-color: #{colors.$white};
+
+  @include define-colors('theme-color', colors.$red);
+}
+
+.nsf-theme-orange {
+  --nsf-theme-color: #{colors.$orange};
+  --nsf-theme-text-color: #{colors.$black};
+
+  @include define-colors('theme-color', colors.$orange);
+}
+
+.nsf-theme-green {
+  --nsf-theme-color: #{colors.$green};
+  --nsf-theme-text-color: #{colors.$black};
+
+  @include define-colors('theme-color', colors.$green);
+}

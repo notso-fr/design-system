@@ -1,0 +1,20 @@
+@use '../settings/sizes';
+@use '../settings/typography';
+
+.nsf-footer {
+  background-color: var(--nsf-theme-color-level7);
+  color: var(--nsf-theme-text-color);
+  font-size: typography.$size-xs;
+  padding: sizes.$size-xl;
+
+  .nsf-link {
+    color: var(--nsf-theme-text-color);
+  }
+}
+
+.nsf-footer-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
