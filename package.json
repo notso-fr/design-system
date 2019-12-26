@@ -14,6 +14,11 @@
     "version": "npm run build && keepachangelog release && git add ./CHANGELOG.md",
     "postversion": "git push origin HEAD && git push origin $npm_package_version"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notso-fr/design-system"
+  },
+  "homepage": "https://github.com/notso-fr/design-system",
   "author": {
     "email": "vincent.tabary@gmail.com",
     "name": "Vincent Tabary",
