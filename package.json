@@ -3,23 +3,28 @@
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
+  "private": false,
   "scripts": {
     "dev": "next",
     "build:pages": "next build",
     "start": "next start",
     "build": "sass ./src/sass/index.scss ./dist/css/index.css",
     "compress": "postcss ./dist/css/index.css -o dist/css/index.min.css -c postcss.config.js",
-    "concurrent": "concurrently \"npm run build -- --watch\" \"npm run compress -- --watch\" --kill-others"
+    "concurrent": "concurrently \"npm run build -- --watch\" \"npm run compress -- --watch\" --kill-others",
+    "version": "npm run build && keepachangelog release && git add ./CHANGELOG.md",
+    "postversion": "git push origin HEAD && git push origin $npm_package_version"
   },
   "author": {
     "email": "vincent.tabary@gmail.com",
-    "name": "Vincent Tabary"
+    "name": "Vincent Tabary",
+    "url": "https://notso.fr"
   },
   "license": "ISC",
   "dependencies": {
     "feather-icons": "^4.25.0"
   },
   "devDependencies": {
+    "@vtabary/keepachangelog-cli": "^0.1.2",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9.7.3",
@@ -36,5 +41,10 @@
     "stylelint": "^12.0.0",
     "stylelint-config-sass-guidelines": "^6.2.0",
     "stylelint-scss": "^3.13.0"
-  }
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md",
+    "README.md"
+  ]
 }
